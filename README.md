@@ -1,100 +1,128 @@
-# 🚗 Traffic Racer – DSA Based 2D Game (C++ & Raylib)
+# Traffic Racer Game -- Project Report
 
-Traffic Racer is a 2D lane-based racing game built using **C++** and **Raylib**, designed to showcase real-time gaming techniques powered by **Data Structures & Algorithms (DSA)**.
+## Submitted By
 
-This project is optimized, clean, fast, and perfect for academic submission.
+-   **Ali Muhammad Salim** -- CT-24083\
+-   **Abdul Rahim** -- CT-24088\
+-   **Muhammad Fouzan Abdul Aziz** -- CT-24090\
+-   **Syed Irtaza Shahid Zaidi** -- CT-24072
 
----
+------------------------------------------------------------------------
 
-## 🎮 Game Features
+## 1. Introduction
 
-- Five-lane endless highway
-- Smooth road scrolling animation
-- Increasing difficulty with dynamic levels
-- Enemy cars with adaptive speed
-- Power-ups:
-  - Shield
-  - Slow Motion
-  - Double Score
-  - Extra Life
-- Collision detection
-- Top 10 score saving system (auto-updates)
-- Menus: Main Menu, Pause, Game Over, Scoreboard
-- Uses modern C++ with Raylib 5.5
+This report presents the design and implementation of a **Traffic
+Racer** game developed using **C++ and Raylib**.\
+The project demonstrates: - Object‑oriented programming\
+- Real‑time rendering\
+- Game state management\
+- Collision detection\
+- Threading\
+- Multiple optimized data structures for smooth gameplay
 
----
+------------------------------------------------------------------------
 
-## 🧠 Data Structures & Algorithms Used
+## 2. Project Overview
 
-### 1. Quadtree – Spatial Partitioning
-Used to optimize collision detection.
+Traffic Racer is a **lane‑based racing simulation** where the player: -
+Avoids incoming vehicles\
+- Collects power‑ups\
+- Earns points\
+- Progresses through increasingly challenging levels
 
-### 2. Priority Queue (Min-Heap) – Event Scheduler
-Handles timed events like enemy and power-up spawning.
+The game includes: - Animated backgrounds\
+- Dynamic scenes\
+- Power‑up effects\
+- Particle systems\
+- Sound effects\
+- Scoring system with high‑score tracking
 
-### 3. Priority Queue (Min-Heap) – Top Scores
-Stores only Top 10 high scores.
+------------------------------------------------------------------------
 
-### 4. Producer–Consumer Algorithm (JobQueue)
-Background thread system for saving scores.
+## 3. System Architecture
 
-### 5. AABB Collision Detection Algorithm
-Used for detecting collisions between player and in-game objects.
+The project uses modular classes for clean and scalable design:
 
-### 6. Lane Safe-Selection Algorithm
-Ensures enemies spawn in safe lanes.
+-   **Car**\
+-   **EnemyManager**\
+-   **PowerUpManager**\
+-   **ScoreManager**\
+-   **SceneManager**\
+-   **TrafficRacingGame**
 
-### 7. Road Scroll Algorithm
-Provides infinite road movement effect.
+Each class handles well‑defined responsibilities to ensure
+maintainability.
 
-### 8. Level Progression Algorithm
-Increases difficulty level based on score.
+------------------------------------------------------------------------
 
----
+## 4. Data Structures Used
 
-## 🕹 Controls
-- Left / A → Move left
-- Right / D → Move right
-- ESC → Pause / Resume
-- Enter → Select
-- Q → Quit
+### **Vector (`std::vector`)**
 
----
+Used for dynamic lists (enemies, power‑ups, particles, jobs).\
+Provides fast iteration and amortized O(1) insertion.
 
-## ⚡ Power-Ups
-- Shield
-- Slow Motion
-- Double Score
-- Extra Life
+### **Quadtree (Custom Implementation)**
 
----
+Improves collision‑detection efficiency by checking only nearby objects.
 
-## 💾 File Saving
-High scores saved to:
-traffic_scores.dat
+### **Priority Queue (`std::priority_queue`)**
 
----
+Used in the event scheduler for timed enemy/power‑up spawns.
 
-## 🛠 How to Compile
-Linux / Mac / MinGW:
-g++ main.cpp -lraylib -pthread -o TrafficRacer
+### **Thread‑Safe Job Queue**
 
-Windows (MSVC):
-cl main.cpp /EHsc raylib.lib
+Implemented with **mutex** + **condition_variable**, handles
+asynchronous file I/O.
 
----
+### **CollisionBox Struct**
 
-## 📂 Project Structure
-main.cpp  
-traffic_scores.dat  
-README.md  
+Used for fast AABB collision detection.
 
----
+### **Enums**
 
-## 👨‍💻 Authors
-Ali Muhammad Salim - CT-24083   
-Abdul Rahim - CT-24088   
-Muhammad Fouzan Abdul Aziz - CT-24090   
-Syed Irtaza Shahid Zaidi - CT-24072   
-**Traffic Racer – DSA Edition** 
+Used for: 
+- Game states\
+- Scene types\
+- Power‑up categories
 
+------------------------------------------------------------------------
+
+## 5. Algorithms Implemented
+
+-   Lane selection algorithm for safe enemy spawning\
+-   Power‑up spawn logic avoiding conflict with enemies\
+-   Quadtree-based efficient collision detection\
+-   Event scheduler with timed callbacks\
+-   Level progression algorithm that increases difficulty dynamically
+
+------------------------------------------------------------------------
+
+## 6. Game Features
+
+-   **8 dynamic background scenes**\
+-   Smooth lane-switching animation\
+-   Power-ups: Shield, Slow Motion, Score Multiplier, Extra Life\
+-   Camera shake on collision\
+-   Particle-based explosion effects\
+-   High‑score saving (asynchronous)\
+-   Optimized collision system
+
+------------------------------------------------------------------------
+
+## 7. Conclusion
+
+The Traffic Racer project demonstrates how **data structures**,
+**algorithms**, and **OOP principles** combine to build a complete
+real‑time game.\
+The use of **Quadtrees** and **async job queues** highlights the
+importance of performance optimization in game development.
+
+------------------------------------------------------------------------
+
+## 8. References
+
+-   Raylib Documentation\
+-   C++ Standard Library\
+-   OOP Concepts\
+-   Data Structures & Algorithms Theory
