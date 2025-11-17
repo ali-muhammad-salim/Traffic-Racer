@@ -92,6 +92,9 @@ README.md
 ---
 
 ## 👨‍💻 Author
-Ali Muhammad Salim  
+Ali Muhammad Salim - CT-24083
+Abdul Rahim - CT-24088
+Muhammad Fouzan Abdul Aziz - CT-24090
+Syed Irtaza Shahid Zaidi - CT-24072
 Traffic Racer – DSA Edition  
 
